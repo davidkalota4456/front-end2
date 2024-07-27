@@ -25,7 +25,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://davidkalota4456.github.io/front-end1",
+  
   "eslintConfig": {
     "extends": [
       "react-app",
