@@ -1,38 +1,645 @@
+.myWord {
+    margin-left: 170px;
+}
+/* app.css calenders styling */
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #bed3f5;
+  margin: 0;
+  padding: 20px;
+}   
+
+/* car house calenders styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+/* car house calenders styling */
+.react-calendar {
+  width: 90%; /* Use a percentage for a more flexible layout */
+  height: auto; /* Adjust height automatically */
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the calendar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Media query for medium screens (tablets) */
+@media (min-width: 768px) {
+  .react-calendar {
+    width: 600px; /* Fixed width for larger screens */
+    height: 400px;
+    margin-right: 170px;
+     
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Media query for larger screens (desktops) */
+@media (min-width: 1024px) {
+  .react-calendar {
+    width: 600px; /* Fixed width for larger screens */
+    height: 400px;
+    margin-left: 400px; /* Specific margin for larger screens */
+  }
+}
+ 
+
+  @media (min-width: 1024px) {
+    .containerh2, .containerh3 {
+      margin-left: 650px; /* Adjust as needed */
+    }
+  }
+  .order-button {
+    width: 300px; /* Adjust this value to make the button wider */
+    padding: 10px 20px; /* Adjust padding for better appearance */
+    margin-right: 650px; /* Retain your original margin-right */
+    background-color: #4CAF50; /* Optional: Customize the background color */
+    color: white; /* Optional: Customize the text color */
+    border: none; /* Optional: Remove the default border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Optional: Change cursor to pointer on hover */
+    font-size: 16px; /* Optional: Adjust font size */
+  }
+
+ 
+  .order-button:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  /*.dropdown-toggle {*/
+  /*  margin-left: 450px;*/
+  /*}*/
+  /*.dropdown-menu {*/
+  /*  margin-left: 450px;*/
+  
+  .dropdown-toggle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+  }
+  
+  /* Media Query for Large Screens */
+  @media (min-width: 1200px) {
+    .dropdown-toggle {
+      margin-left: 350px;
+    }
+  
+    .dropdown-menu {
+      margin-left: 350px;
+    }
+  }
+  
+  /* Media Query for Medium Screens */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .dropdown-toggle {
+      margin-right: 199px; /* Adjust as needed */
+    }
+  
+    .dropdown-menu {
+      margin-right: 199px; /* Adjust as needed */
+    }
+  }
+  
+  /* Media Query for Small Screens */
+  @media (max-width: 767px) {
+    .dropdown-toggle {
+      margin-left: 10px; /* Adjust as needed */
+      margin-right: 40px;
+    }
+  
+    .dropdown-menu {
+      margin-left: 10px; /* Adjust as needed */
+      margin-right: 50px;
+      width: 90%; /* Make sure the dropdown fits within smaller screens */
+    }
+  }
+
+
+
+
+
+
+
+
+  /* App.css */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.order-button {
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+.dropdown-toggle {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column; /* Ensure items are stacked vertically */
+}
+
+.dropdown-item {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc; /* Optional: Add a separator */
+}
+
+.dropdown-item:last-child {
+  border-bottom: none; /* Remove separator for last item */
+}
+
+
+
+
+
+
+
+
+
+
+.cart {
+  width: 200px;
+  margin-left: 130px; /* Default margin for smaller screens */
+  padding: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .cart {
+    margin-left: 180px; /* Adjust this value for medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart {
+    margin-left: 500px; /* Adjust this value for larger screens */
+  }
+}
+
+
+  
+  .cart h2 {
+    margin-top: 0;
+  }
+  
+  .cart-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  .order-button2 {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: 460px;
+  }
+  @media (max-width: 1024px) {
+    .order-button2 {
+      margin-left: 
+      0px; 
+    }
+  }
+
+  
+  
+  
+  @media (max-width: 768px) {
+    .order-button2 {
+      margin-left: 50px; /* Adjust this value for smaller screens */
+    }
+  }
+
+  .order-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: 20px;
+  }
+  .myOrder {
+    width: 100%;
+    max-width: 600px; /* Keeps it from becoming too wide on large screens */    
+    margin: 10px auto; /* Centers horizontally by default */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .myOrder {
+      width: 90%; /* Adjust width for tablets */
+      margin-left: 50px; /* Move more to the right on smaller screens */
+      margin-right: 50px; /* Ensure there's space on both sides */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .myOrder {
+      width: 100%; /* Full width on very small screens */
+      padding: 10px; /* Adjust padding for small screens */
+      margin-left: 30px; /* Move more to the right on very small screens */
+      margin-right: 30px; /* Ensure there's space on both sides */
+    }
+  }
+  
+
+
+
+
+  /* MyCalendar.css */
+
+/* Style for the container of days of the week */
+.react-calendar__month-view__weekdays {
+  display: flex;
+  justify-content: space-around; /* Adjusts spacing between days */
+  background-color: #f0f0f0; /* Example background color */
+  padding: 10px 0; /* Example padding */
+  font-weight: bold; /* Example font weight */
+}
+
+/* Style for each day of the week */
+.react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+  flex: 1; /* Ensures even spacing */
+}
+
+/* Style for the dates */
+.react-calendar__tile {
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  background-color: #fff; /* Example background color */
+  border-radius: 5px; /* Example border radius */
+  transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+/* Style for the dates on hover */
+.react-calendar__tile:hover {
+  background-color: #e6e6e6; /* Example hover background color */
+}
+
+/* Style for the selected date range */
+.react-calendar__tile--range {
+  background-color: #006edc; /* Example range background color */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for the start and end of the selected date range */
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd {
+  background-color: #004ba0; /* Example start/end background color */
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Rgister styling */
+/* General Styles for the App */
+
+
+
+
+
+.register-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin-left: 770px;
+  margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+  .register-container {
+    margin-left: 300px; /* Smaller margin for medium screens */
+    margin-top: 30px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+
+
+
+.register-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container div {
+  margin-bottom: 15px;
+}
+
+.register-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.register-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.register-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.register-container button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+/* LOGIN FORM */
+
+.login-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto; 
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form div {
+  margin-bottom: 15px;
+}
+
+.login-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+.login-form a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for medium screens (tablets) */
+@media (max-width: 1024px) {
+  .login-form {
+    padding: 15px;
+    margin: 20px auto;
+  }
+}
+
+/* Media query for small screens (mobile) */
+@media (max-width: 768px) {
+  .login-form {
+    padding: 10px;
+    margin: 10px auto;
+  }
+}
+
+
+/* Container for image gallery */
+.image-gallery {
+  display: flex;
+  flex-direction: column; /* Arrange images vertically */
+  align-items: center; /* Center the images horizontally */
+  gap: 30px; /* Space between images */
+  padding: 20px;
+  position: relative; /* Positioning context for absolute positioning if needed */
+  z-index: 0; /* Ensure it’s below other content */
+  margin-top: 50px; /* Ensure there’s space above the gallery */
+}
+
+/* Styling for individual images */
+.image-gallery img {
+  width: 80%; /* Default width for smaller screens */
+  max-width: 800px; /* Default maximum width for smaller screens */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Hover effects for images */
+.image-gallery img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Media query for larger screens (full-size view) */
+@media (min-width: 1024px) {
+  .image-gallery img {
+    width: 90%; /* Increase width for larger screens */
+    max-width: 1400px; /* Increase maximum width for larger screens */
+    height: 800px; /* Increase height for a thicker look */
+  }
+}
+
+
+/* Define styles for booked days */
+.booked-day {
+  background-color: lightblue; /* Change this to your desired color */
+  color: white; /* Text color */
+}
+.alert-message {
+  color: red;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Container for cart items */
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  padding: 20px;
+}
+
+/* Cart list styling */
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Full width for responsiveness */
+}
+
+.cart-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  text-align: center; /* Center text */
+}
+
+/* Submit button styling */
+.cart-submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart-submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Query for Large Screens */
+@media (min-width: 1200px) {
+  .cart-container {
+    margin-left: 420px; /* Adjust as needed */
+    width: calc(100% - 450px); /* Adjust width accordingly */
+  }
+}
+
+/* Media Query for Medium Screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .cart-container {
+    margin-left: 30px; /* Adjust as needed */
+    width: calc(100% - 30px); /* Adjust width accordingly */
+  }
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 767px) {
+  .cart-container {
+    margin-left: 10px; /* Adjust as needed */
+    width: calc(100% - 10px); /* Adjust width accordingly */
   }
 }
